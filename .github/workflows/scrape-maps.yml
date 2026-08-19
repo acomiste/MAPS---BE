@@ -64,9 +64,10 @@ jobs:
           python-version: "3.11"
 
       - name: Installer les dépendances
+        timeout-minutes: 8
         run: |
           pip install playwright
-          playwright install --with-deps chromium
+          playwright install chromium
 
       # Le script commit + push lui-même tous les GIT_COMMIT_TOUTES_LES URLs
       # (voir commit_git() dans scrape_google_maps.py), il a donc besoin de
